@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.0d7d2430.css",
+    "main.js": "/portfolio/static/js/main.85cf40c8.js",
+    "static/media/raman.png": "/portfolio/static/media/raman.f62dfcf4920b0ad09235.png",
+    "static/media/en-route.png": "/portfolio/static/media/en-route.4b92f684cb82d6466b52.png",
+    "static/media/gallery.png": "/portfolio/static/media/gallery.809b623958c94d1b9635.png",
+    "static/media/biotell.png": "/portfolio/static/media/biotell.fd7b0997fd2003c3fcd8.png",
+    "static/media/shootthemoon.png": "/portfolio/static/media/shootthemoon.ab0107f704853d33a451.png",
+    "static/media/skipspace-app.png": "/portfolio/static/media/skipspace-app.e31b87068acfb62bba52.png",
+    "static/media/skipspace.png": "/portfolio/static/media/skipspace.240e84c760bc10b451ca.png",
+    "static/media/pokemon-api.png": "/portfolio/static/media/pokemon-api.edb62d4eef559cd8d0e1.png",
+    "static/media/bcg.png": "/portfolio/static/media/bcg.aaf13c3e4d4d28b86032.png",
+    "static/media/dashboard.png": "/portfolio/static/media/dashboard.27152e967ef643116fa5.png",
+    "index.html": "/portfolio/index.html",
+    "main.0d7d2430.css.map": "/portfolio/static/css/main.0d7d2430.css.map",
+    "main.85cf40c8.js.map": "/portfolio/static/js/main.85cf40c8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d7d2430.css",
+    "static/js/main.85cf40c8.js"
+  ]
+}
