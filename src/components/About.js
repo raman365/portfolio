@@ -124,7 +124,7 @@ const About = () => {
               07949865915
             </a>
           </p>
-          <p>
+          <p className="justify-items-center md:justify-items-start">
             <a
               href="https://www.linkedin.com/in/raman-oraha-ba3544232"
               target="_blank"
