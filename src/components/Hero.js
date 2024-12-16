@@ -64,17 +64,17 @@ const Hero = () => {
 
       {/* Image with Pentagon background */}
       <motion.div
-        className="mt-10 md:mt-0 md:w-1/2 flex justify-center relative"
+        className="mt-0 md:w-1/2 flex justify-center relative"
         initial="hidden"
         animate="visible"
         variants={imageVariants}
       >
         {/* Pentagon Background */}
-        <div className="absolute glow md:scale-100 scale-[.6]">
+        <div className="absolute glow md:scale-100 scale-50">
           <div className="w-[20rem] h-[20rem] bg-[#07eeff] z-10 clip-pentagon"></div>
         </div>
         {/* Image */}
-        <div className="relative w-[22rem] h-[22rem] z-20 flex justify-center items-center md:scale-100 scale-[.6]">
+        <div className="relative w-[22rem] h-[22rem] z-20 flex justify-center items-center md:scale-100 scale-50">
           <img
             src={raman} // Replace with the actual image path
             alt="Raman Oraha"
