@@ -24,8 +24,8 @@ const Hero = () => {
         animate="visible"
         variants={textVariants}
       >
-        <h1 className="text-4xl md:text-5xl font-bold">Hello, It's Me</h1>
-        <h2 className="text-5xl md:text-6xl font-extrabold text-white my-2">
+        <h1 className="text-3xl md:text-5xl font-bold">Hello, It's Me</h1>
+        <h2 className="text-4xl md:text-6xl font-extrabold text-white my-2">
           Raman Oraha
         </h2>
         <h3 className="text-xl md:text-2xl font-semibold">
