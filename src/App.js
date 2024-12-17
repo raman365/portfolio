@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       {/* The combined Header and Hero section */}
-      <div className="h-screen">
+      <div className="md:h-screen">
         <Header />
         <Hero />
       </div>
