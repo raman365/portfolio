@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center bg-[#20242d] text-white h-[calc(100vh-80px)] pl-[5%] pr-[5%] md:pl-[10%] md:pr-[10%]">
+    <section className="flex flex-col md:flex-row items-center justify-center bg-[#20242d] text-white md:h-[calc(100vh-80px)] pl-[5%] pr-[5%] md:pl-[10%] md:pr-[10%]">
       {/* Text Content */}
       <motion.div
         className="text-center md:text-left md:w-1/2"
