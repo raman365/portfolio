@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedinIn } from "react-icons/fa";
-import raman from "../raman.png";
 import Typewriter from "./Typewriter";
+
+// Replace local imports with CloudFront URLs
+const cloudFrontURL = "https://dxvutl5ln4i40.cloudfront.net/raman.png";
 
 const Hero = () => {
   const imageVariants = {
@@ -76,7 +78,7 @@ const Hero = () => {
         {/* Image */}
         <div className="relative w-[22rem] h-[22rem] z-20 flex justify-center items-center md:scale-100 scale-50">
           <img
-            src={raman} // Replace with the actual image path
+            src={cloudFrontURL} // Replace with the actual image path
             alt="Raman Oraha"
             className="w-[19rem] -mt-24 h-[24rem] object-cover clip-bottom-pentagon drop-shadow"
           />

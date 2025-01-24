@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import BCG from "../portfolio/bcg.png";
-import Dashboard from "../portfolio/dashboard.png";
-import Skipspace from "../portfolio/skipspace.png";
-import Gallery from "../portfolio/gallery.png";
-import SkipspaceApp from "../portfolio/skipspace-app.png";
-import EnRoute from "../portfolio/en-route.png";
-import PokemonApi from "../portfolio/pokemon-api.png";
-import STM from "../portfolio/shootthemoon.png";
-import Biotell from "../portfolio/biotell.png";
+
+// Replace local imports with CloudFront URLs
+const cloudFrontURL = "https://dxvutl5ln4i40.cloudfront.net/";
 
 const Project = () => {
   const [showMore, setShowMore] = useState(false);
@@ -41,15 +35,15 @@ const Project = () => {
   };
 
   const projects = [
-    { src: BCG, label: "Digital Card Generator", href: "https://raman365.github.io/digital-business-card" },
-    { src: Dashboard, label: "Dashboard Template", href: "https://raman365.github.io/mydashboard" },
-    { src: Skipspace, label: "Skipspace", href: "https://skipspace-v2.netlify.app" },
-    { src: Gallery, label: "Custom Gallery Feature", href: "https://raman365.github.io/gallery" },
-    { src: SkipspaceApp, label: "Skipspace App", href: "https://www.skipspace.co.uk/how-it-works" },
-    { src: EnRoute, label: "En-Route", href: "https://en-route.com" },
-    { src: PokemonApi, label: "Pokemon Api Fetch", href: "https://pokeapi-build-test.netlify.app" },
-    { src: STM, label: "Shoot The Moon", href: "https://www.shootthemoon.co.uk" },
-    { src: Biotell, label: "Biotell", href: "https://biotell.com" },
+    { src: `${cloudFrontURL}bcg.png`, label: "Digital Card Generator", href: "https://raman365.github.io/digital-business-card" },
+    { src: `${cloudFrontURL}dashboard.png`, label: "Dashboard Template", href: "https://raman365.github.io/mydashboard" },
+    { src: `${cloudFrontURL}skipspace.png`, label: "Skipspace", href: "https://skipspace-v2.netlify.app" },
+    { src: `${cloudFrontURL}gallery.png`, label: "Custom Gallery Feature", href: "https://raman365.github.io/gallery" },
+    { src: `${cloudFrontURL}skipspace-app.png`, label: "Skipspace App", href: "https://www.skipspace.co.uk/the-app" },
+    { src: `${cloudFrontURL}en-route.png`, label: "En-Route", href: "https://en-route.com" },
+    { src: `${cloudFrontURL}pokemon-api.png`, label: "Pokemon Api Fetch", href: "https://pokeapi-build-test.netlify.app" },
+    { src: `${cloudFrontURL}shootthemoon.png`, label: "Shoot The Moon", href: "https://www.shootthemoon.co.uk" },
+    { src: `${cloudFrontURL}biotell.png`, label: "Biotell", href: "https://biotell.com" },
   ];
 
   const initialProjects = projects.slice(0, 6);
