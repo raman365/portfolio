@@ -57,11 +57,11 @@ const About = () => {
           I’m a passionate Front-End Developer with 5+ years of experience
           crafting seamless, responsive, and visually engaging websites. I’ve
           had the privilege of collaborating with companies as part of their
-          teams and taking on projects independently as a freelancer,
-          delivering tailor-made solutions that bring their visions to life.
-          Whether it’s a personal project, an e-commerce platform, or a
-          corporate website, I specialise in creating web experiences that are
-          not only functional but also leave a lasting impression. <br />
+          teams and taking on projects independently as a freelancer, delivering
+          tailor-made solutions that bring their visions to life. Whether it’s a
+          personal project, an e-commerce platform, or a corporate website, I
+          specialise in creating web experiences that are not only functional
+          but also leave a lasting impression. <br />
           <br />
           Let’s build something amazing together!
         </motion.p>
@@ -83,22 +83,32 @@ const About = () => {
         }}
       >
         {/* Skills Section */}
-        <motion.div
-          className="flex-1"
-          variants={fadeInFromLeft}
-        >
+        <motion.div className="flex-1" variants={fadeInFromLeft}>
           <h2 className="text-2xl font-semibold mb-4 text-center md:text-left">
             My Skills
           </h2>
           <ul className="text-gray-400 text-center md:text-left space-y-2">
-            <li>✔ React & React Native</li>
-            <li>✔ HTML, CSS (Tailwind), and JavaScript</li>
-            <li>✔ WordPress Development</li>
-            <li>✔ GitHub & Version Control</li>
-            <li>✔ Google Firebase Integration</li>
-            <li>✔ Responsive Web Design</li>
-            <li>✔ Cross-Platform Mobile Apps</li>
-            <li>✔ Strong Debugging & Problem-Solving Skills</li>
+            <li>
+              ✔ <strong>Frontend Development</strong>: React, React Native,
+              Next.js, TypeScript, Tailwind CSS
+            </li>
+            <li>
+              ✔ <strong>Backend & APIs</strong>: Node.js, REST API, Firebase
+            </li>
+            <li>
+              ✔ <strong>Cloud & DevOps</strong>: AWS (ECS, CloudFront, S3),
+              Google Cloud, Docker
+            </li>
+            <li>
+              ✔ <strong>Testing & CI/CD</strong>: Jest, React Testing Library,
+              GitHub Actions
+            </li>
+            <li>
+              ✔ <strong>Version Control</strong>: GitHub
+            </li>
+            <li>
+              ✔ <strong>Mobile & CMS</strong>: Cross-Platform Apps, WordPress, Shopify
+            </li>
           </ul>
         </motion.div>
 

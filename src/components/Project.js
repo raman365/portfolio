@@ -35,15 +35,56 @@ const Project = () => {
   };
 
   const projects = [
-    { src: `${cloudFrontURL}bcg.png`, label: "Digital Card Generator", href: "https://raman365.github.io/digital-business-card" },
-    { src: `${cloudFrontURL}dashboard.png`, label: "Dashboard Template", href: "https://raman365.github.io/mydashboard" },
-    { src: `${cloudFrontURL}skipspace.png`, label: "Skipspace", href: "https://skipspace-v2.netlify.app" },
-    { src: `${cloudFrontURL}gallery.png`, label: "Custom Gallery Feature", href: "https://raman365.github.io/gallery" },
-    { src: `${cloudFrontURL}skipspace-app.png`, label: "Skipspace App", href: "https://www.skipspace.co.uk/the-app" },
-    { src: `${cloudFrontURL}en-route.png`, label: "En-Route", href: "https://en-route.com" },
-    { src: `${cloudFrontURL}pokemon-api.png`, label: "Pokemon Api Fetch", href: "https://pokeapi-build-test.netlify.app" },
-    { src: `${cloudFrontURL}shootthemoon.png`, label: "Shoot The Moon", href: "https://www.shootthemoon.co.uk" },
-    { src: `${cloudFrontURL}biotell.png`, label: "Biotell", href: "https://biotell.com" },
+    {
+      src: `${cloudFrontURL}bcg.png`,
+      label: "Digital Card Generator",
+      href: "https://raman365.github.io/digital-business-card",
+    },
+    {
+      src: `${cloudFrontURL}pdg.png`,
+      label: "AI Product Description Generator",
+      href: "https://product-description-generator-ptahahq9w-raman-orahas-projects.vercel.app",
+    },
+    {
+      src: `${cloudFrontURL}dashboard.png`,
+      label: "Dashboard Template",
+      href: "https://raman365.github.io/mydashboard",
+    },
+    {
+      src: `${cloudFrontURL}skipspace.png`,
+      label: "Skipspace",
+      href: "https://skipspace-v2.netlify.app",
+    },
+    {
+      src: `${cloudFrontURL}gallery.png`,
+      label: "Custom Gallery Feature",
+      href: "https://raman365.github.io/gallery",
+    },
+    {
+      src: `${cloudFrontURL}skipspace-app.png`,
+      label: "Skipspace App",
+      href: "https://www.skipspace.co.uk/the-app",
+    },
+    {
+      src: `${cloudFrontURL}en-route.png`,
+      label: "En-Route",
+      href: "https://en-route.com",
+    },
+    {
+      src: `${cloudFrontURL}pokemon-api.png`,
+      label: "Pokemon Api Fetch",
+      href: "https://pokeapi-build-test.netlify.app",
+    },
+    {
+      src: `${cloudFrontURL}shootthemoon.png`,
+      label: "Shoot The Moon",
+      href: "https://www.shootthemoon.co.uk",
+    },
+    {
+      src: `${cloudFrontURL}biotell.png`,
+      label: "Biotell",
+      href: "https://biotell.com",
+    },
   ];
 
   const initialProjects = projects.slice(0, 6);
@@ -89,7 +130,9 @@ const Project = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#00838e] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="flex items-center justify-center h-full">
-                  <p className="text-white text-xl font-bold">{project.label}</p>
+                  <p className="text-white text-xl text-center font-bold">
+                    {project.label}
+                  </p>
                 </div>
               </div>
             </a>
@@ -113,7 +156,9 @@ const Project = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#00838e] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex items-center justify-center h-full">
-                    <p className="text-white text-xl font-bold">{project.label}</p>
+                    <p className="text-white text-center text-xl font-bold">
+                      {project.label}
+                    </p>
                   </div>
                 </div>
               </a>
