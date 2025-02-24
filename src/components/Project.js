@@ -43,7 +43,7 @@ const Project = () => {
     {
       src: `${cloudFrontURL}pdg.png`,
       label: "AI Product Description Generator",
-      href: "https://product-description-generator-ptahahq9w-raman-orahas-projects.vercel.app",
+      href: "https://product-description-generator-gamma.vercel.app",
     },
     {
       src: `${cloudFrontURL}dashboard.png`,
