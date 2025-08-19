@@ -34,7 +34,7 @@ const Hero = () => {
           And I'm a{" "}
           <span className="text-[#07eeff]">
             <Typewriter
-              text="Frontend Developer"
+              text="Web Developer"
               delay={100}
               infinite
               pauseAfterComplete={3000}
@@ -42,9 +42,11 @@ const Hero = () => {
           </span>
         </h3>
         <p className="text-sm md:text-base text-gray-400 mt-4">
-          As a front-end developer with expertise in React.js and React Native,
-          I specialize in building dynamic, responsive, and user-friendly web
-          and mobile applications.
+          As a Web Developer with strong expertise in WordPress and
+          Shopify, I specialize in building dynamic, responsive, and
+          user-friendly websites. I also have experience with React.js and React
+          Native, which allows me to extend my skills into modern web and mobile
+          applications.
         </p>
         <div className="flex justify-center md:justify-start space-x-4 mt-6">
           {/* Social Icons */}

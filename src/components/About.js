@@ -54,7 +54,7 @@ const About = () => {
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeInUp}
         >
-          I’m a passionate Front-End Developer with 5+ years of experience
+          I’m a passionate Web Developer with 5+ years of experience
           crafting seamless, responsive, and visually engaging websites. I’ve
           had the privilege of collaborating with companies as part of their
           teams and taking on projects independently as a freelancer, delivering
