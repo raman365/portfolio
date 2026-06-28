@@ -24,12 +24,12 @@ filenames. The site is served from the `/portfolio/` base path (configured in
 
 Serves the production build locally so you can verify it before deploying.
 
-### `npm run deploy`
+## Deployment
 
-Builds the app and publishes the `build/` folder to the `gh-pages` branch via
-the [`gh-pages`](https://github.com/tschaub/gh-pages) package. **Deploys are
-manual** — pushing to `main` does not publish anything; run this command to
-update the live site at https://raman365.github.io/portfolio.
+Deployment is automatic. Every push to `main` triggers the
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) GitHub Actions
+workflow, which builds the site with Vite and publishes it to GitHub Pages at
+https://raman365.github.io/portfolio. No manual deploy step is needed.
 
 ## Learn More
 
