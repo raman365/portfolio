@@ -8,5 +8,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'build',
+    // The Three.js hero scene is intentionally a large, lazily-loaded chunk.
+    chunkSizeWarningLimit: 1000,
   },
 });

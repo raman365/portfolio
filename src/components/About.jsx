@@ -1,152 +1,54 @@
 import React from "react";
-import { FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Section, { SectionHeading, revealVariants } from "./Section";
+
+const STATS = [
+  { value: "5+", label: "Years experience" },
+  { value: "20+", label: "Projects shipped" },
+  { value: "10+", label: "Happy clients" },
+];
 
 const About = () => {
-  // Variants for the fade in/up effect and directional fading
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 },
-    },
-  };
-
-  const fadeInFromLeft = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8 },
-    },
-  };
-
-  const fadeInFromRight = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8 },
-    },
-  };
-
   return (
-    <section
-      id="about"
-      className="bg-[#20242d] text-white py-10 pl-[5%] pr-[5%] md:pl-[10%] md:pr-[10%]"
-    >
-      {/* Section Title and Description */}
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.h1
-          className="text-4xl font-bold mb-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInUp}
-        >
-          About <span className="text-[#07eeff]">Me</span>
-        </motion.h1>
+    <Section id="about" className="bg-surface-2" labelledBy="about-heading">
+      <div className="max-w-3xl mx-auto text-center">
+        <motion.div variants={revealVariants}>
+          <SectionHeading id="about-heading" accent="Me">
+            About
+          </SectionHeading>
+        </motion.div>
         <motion.p
-          className="text-gray-400 text-lg leading-relaxed md:[text-align-last:center] md:text-justify"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInUp}
+          className="text-gray-400 text-lg leading-relaxed mt-6"
+          variants={revealVariants}
         >
-          I’m a passionate Web Developer with 5+ years of experience
-          crafting seamless, responsive, and visually engaging websites. I’ve
-          had the privilege of collaborating with companies as part of their
-          teams and taking on projects independently as a freelancer, delivering
-          tailor-made solutions that bring their visions to life. Whether it’s a
-          personal project, an e-commerce platform, or a corporate website, I
-          specialise in creating web experiences that are not only functional
-          but also leave a lasting impression. <br />
-          <br />
-          Let’s build something amazing together!
+          I&apos;m a passionate web developer with 5+ years of experience
+          crafting seamless, responsive, and visually engaging websites. I&apos;ve
+          collaborated with companies as part of their teams and taken on
+          projects independently as a freelancer, delivering tailor-made
+          solutions that bring ideas to life — from personal projects to
+          e-commerce platforms and corporate sites.
+        </motion.p>
+        <motion.p className="text-accent mt-4 font-medium" variants={revealVariants}>
+          Let&apos;s build something amazing together.
         </motion.p>
       </div>
 
-      {/* Skills and Contact Layout */}
       <motion.div
-        className="mt-12 md:max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-12"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.3, // Adds delay between left and right column animations
-            },
-          },
-        }}
+        className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mt-12"
+        variants={revealVariants}
       >
-        {/* Skills Section */}
-        <motion.div className="flex-1" variants={fadeInFromLeft}>
-          <h2 className="text-2xl font-semibold mb-4 text-center md:text-left">
-            My Skills
-          </h2>
-          <ul className="text-gray-400 text-center md:text-left space-y-2">
-            <li>
-              ✔ <strong>Frontend Development</strong>: React, React Native,
-              Next.js, TypeScript, Tailwind CSS
-            </li>
-            <li>
-              ✔ <strong>Backend & APIs</strong>: Node.js, REST API, Firebase
-            </li>
-            <li>
-              ✔ <strong>Cloud & DevOps</strong>: AWS (ECS, CloudFront, S3),
-              Google Cloud, Docker
-            </li>
-            <li>
-              ✔ <strong>Testing & CI/CD</strong>: Jest, React Testing Library,
-              GitHub Actions
-            </li>
-            <li>
-              ✔ <strong>Version Control</strong>: GitHub
-            </li>
-            <li>
-              ✔ <strong>Mobile & CMS</strong>: Cross-Platform Apps, WordPress, Shopify
-            </li>
-          </ul>
-        </motion.div>
-
-        {/* Contact Section */}
-        <motion.div
-          className="flex-1 text-center md:text-left"
-          variants={fadeInFromRight}
-        >
-          <h2 className="text-2xl font-semibold mb-4">Contact Me</h2>
-          <p className="text-gray-400 mb-2">
-            <a
-              href="mailto:ramanoraha1@hotmail.co.uk"
-              className="text-[#07eeff] hover:underline"
-            >
-              Ramanoraha1@hotmail.co.uk
-            </a>
-          </p>
-          <p className="text-gray-400 mb-2">
-            <a
-              href="tel:+447949865915"
-              className="text-[#07eeff] hover:underline"
-            >
-              07949865915
-            </a>
-          </p>
-          <p className="flex justify-center md:justify-start">
-            <a
-              href="https://www.linkedin.com/in/raman-oraha-ba3544232"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-7 h-7 flex items-center justify-center bg-[#07eeff] text-[#0B0D17] rounded-full hover:bg-[#07eeffbf]"
-            >
-              <FaLinkedinIn size={14} /> {/* LinkedIn icon */}
-            </a>
-          </p>
-        </motion.div>
+        {STATS.map((s) => (
+          <div key={s.label} className="glass rounded-xl py-6 text-center">
+            <div className="font-display text-3xl md:text-4xl font-bold text-accent">
+              {s.value}
+            </div>
+            <div className="text-xs md:text-sm text-gray-400 mt-1">
+              {s.label}
+            </div>
+          </div>
+        ))}
       </motion.div>
-    </section>
+    </Section>
   );
 };
 

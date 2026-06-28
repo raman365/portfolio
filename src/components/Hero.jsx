@@ -1,91 +1,165 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FiArrowDown } from "react-icons/fi";
 import Typewriter from "./Typewriter";
+import { CONTACT } from "../data/site";
 
-// Replace local imports with CloudFront URLs
 const cloudFrontURL = "https://dxvutl5ln4i40.cloudfront.net/raman.png";
 
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 const Hero = () => {
-  const imageVariants = {
-    hidden: { opacity: 0, y: 100 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-  };
-
-  const textVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.3 } },
-  };
-
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center bg-[#20242d] text-white md:h-[calc(100vh-80px)] pl-[5%] pr-[5%] md:pl-[10%] md:pr-[10%]">
-      {/* Text Content */}
+    <section
+      id="home"
+      className="relative overflow-hidden min-h-screen flex items-center bg-bg pt-24 pb-20 md:py-0 px-[5%] md:px-[10%]"
+    >
+      {/* Animated gradient mesh background */}
+      <div aria-hidden="true" className="absolute inset-0 -z-0">
+        <div className="absolute -top-32 -left-24 w-[28rem] h-[28rem] rounded-full bg-accent/20 blur-[120px] animate-float" />
+        <div className="absolute top-1/3 -right-24 w-[32rem] h-[32rem] rounded-full bg-cyan-500/10 blur-[130px] animate-glow-pulse" />
+        <div className="absolute bottom-0 left-1/4 w-[24rem] h-[24rem] rounded-full bg-teal-400/10 blur-[120px] animate-float" />
+        {/* subtle dot grid */}
+        <div
+          className="absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255,255,255,0.18) 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+            maskImage:
+              "radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent)",
+          }}
+        />
+      </div>
+
       <motion.div
-        className="text-center md:text-left md:w-1/2"
+        className="relative z-10 w-full grid md:grid-cols-2 gap-12 items-center"
+        variants={container}
         initial="hidden"
         animate="visible"
-        variants={textVariants}
       >
-        <h1 className="text-3xl md:text-5xl font-bold">Hello, It's Me</h1>
-        <h2 className="text-4xl md:text-6xl font-extrabold text-white my-2">
-          Raman Oraha
-        </h2>
-        <h3 className="text-xl md:text-2xl font-semibold">
-          And I'm a{" "}
-          <span className="text-[#07eeff]">
-            <Typewriter
-              text="Web Developer"
-              delay={100}
-              infinite
-              pauseAfterComplete={3000}
-            />
-          </span>
-        </h3>
-        <p className="text-sm md:text-base text-gray-400 mt-4">
-          As a Web Developer with strong expertise in WordPress and
-          Shopify, I specialize in building dynamic, responsive, and
-          user-friendly websites. I also have experience with React.js and React
-          Native, which allows me to extend my skills into modern web and mobile
-          applications.
-        </p>
-        <div className="flex justify-center md:justify-start space-x-4 mt-6">
-          {/* Social Icons */}
-          <a
-            href="https://www.linkedin.com/in/raman-oraha-ba3544232"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center bg-[#07eeff] text-[#0B0D17] rounded-full hover:bg-[#07eeffbf] transition"
+        {/* Text */}
+        <div className="text-center md:text-left">
+          <motion.p
+            variants={item}
+            className="inline-flex items-center gap-2 text-sm font-medium text-accent mb-4 px-3 py-1 rounded-full glass"
           >
-            <FaLinkedinIn size={20} />
-          </a>
+            <span className="w-2 h-2 rounded-full bg-accent animate-glow-pulse" />
+            Available for work
+          </motion.p>
+
+          <motion.h1
+            variants={item}
+            className="font-display text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]"
+          >
+            <span className="bg-gradient-to-r from-white via-white to-accent bg-clip-text text-transparent">
+              Raman Oraha
+            </span>
+          </motion.h1>
+
+          <motion.h2
+            variants={item}
+            className="text-2xl md:text-3xl font-semibold mt-4 text-gray-300"
+          >
+            I&apos;m a{" "}
+            <span className="text-accent">
+              <Typewriter
+                text="Web Developer"
+                delay={100}
+                infinite
+                pauseAfterComplete={3000}
+              />
+            </span>
+          </motion.h2>
+
+          <motion.p
+            variants={item}
+            className="text-base text-gray-400 mt-6 max-w-xl mx-auto md:mx-0 leading-relaxed"
+          >
+            A web developer with 5+ years building fast, responsive, and
+            user-friendly websites — from WordPress and Shopify stores to modern
+            web and mobile apps with React and React Native.
+          </motion.p>
+
+          <motion.div
+            variants={item}
+            className="flex flex-wrap justify-center md:justify-start items-center gap-4 mt-8"
+          >
+            <a
+              href="#portfolio"
+              className="px-6 py-3 bg-accent text-ink font-semibold rounded-lg hover:bg-accent-dim transition-colors shadow-glow-sm"
+            >
+              View my work
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 glass text-white font-semibold rounded-lg hover:text-accent transition-colors"
+            >
+              Get in touch
+            </a>
+            <div className="flex items-center gap-3 sm:ml-2">
+              <a
+                href={CONTACT.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Raman Oraha on LinkedIn"
+                className="w-10 h-10 flex items-center justify-center rounded-full glass hover:text-accent transition-colors"
+              >
+                <FaLinkedinIn size={18} />
+              </a>
+              <a
+                href={CONTACT.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Raman Oraha on GitHub"
+                className="w-10 h-10 flex items-center justify-center rounded-full glass hover:text-accent transition-colors"
+              >
+                <FaGithub size={18} />
+              </a>
+            </div>
+          </motion.div>
         </div>
-        <a href="#portfolio">
-          <button className="mt-6 px-6 py-2 bg-[#07eeff] text-[#0B0D17] font-bold rounded hover:bg-[#07eeffbf] transition">
-            View portfolio
-          </button>
-        </a>
+
+        {/* Portrait */}
+        <motion.div
+          variants={item}
+          className="flex justify-center md:justify-end"
+        >
+          <div className="relative animate-float">
+            {/* glow ring */}
+            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-accent/40 via-transparent to-accent/20 blur-2xl" />
+            {/* gradient border frame */}
+            <div className="relative p-[2px] rounded-[2rem] bg-gradient-to-tr from-accent via-accent/30 to-transparent shadow-glow">
+              <img
+                src={cloudFrontURL}
+                alt="Portrait of Raman Oraha"
+                width="320"
+                height="400"
+                className="w-72 h-[24rem] md:w-80 md:h-[26rem] object-cover object-top rounded-[1.9rem] bg-surface"
+              />
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
 
-      {/* Image with Pentagon background */}
-      <motion.div
-        className="mt-0 md:w-1/2 flex justify-center relative"
-        initial="hidden"
-        animate="visible"
-        variants={imageVariants}
+      {/* Scroll indicator */}
+      <a
+        href="#portfolio"
+        aria-label="Scroll to projects"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-gray-500 hover:text-accent transition-colors animate-float"
       >
-        {/* Pentagon Background */}
-        <div className="absolute glow md:scale-100 scale-50">
-          <div className="w-[20rem] h-[20rem] bg-[#07eeff] z-10 clip-pentagon"></div>
-        </div>
-        {/* Image */}
-        <div className="relative w-[22rem] h-[22rem] z-20 flex justify-center items-center md:scale-100 scale-50">
-          <img
-            src={cloudFrontURL} // Replace with the actual image path
-            alt="Raman Oraha"
-            className="w-[19rem] -mt-24 h-[24rem] object-cover clip-bottom-pentagon drop-shadow"
-          />
-        </div>
-      </motion.div>
+        <FiArrowDown size={24} />
+      </a>
     </section>
   );
 };

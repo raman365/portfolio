@@ -2,10 +2,44 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.clip-pentagon {
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-white font-sans antialiased;
+  }
+
+  /* Visible keyboard focus everywhere, without showing on mouse clicks */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Glassmorphism surface used by cards / header */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .clip-pentagon {
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
   }
-  
+
   .clip-bottom-pentagon {
     clip-path: polygon(-20% 0%, 120% 0%, 84% 100%, 16% 100%);
   }
@@ -17,7 +51,4 @@
   .glow {
     filter: drop-shadow(0 15px 20px rgba(0, 255, 255, 0.5));
   }
-
-  html {
-    scroll-behavior: smooth;
-  }
+}
