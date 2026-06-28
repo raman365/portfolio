@@ -145,7 +145,7 @@ const Hero = () => {
                 alt="Portrait of Raman Oraha"
                 width="320"
                 height="400"
-                className="w-72 h-[24rem] md:w-80 md:h-[26rem] object-cover object-top rounded-[1.9rem] bg-surface"
+                className="w-72 h-[24rem] md:w-80 md:h-[26rem] object-cover object-[center_30%] rounded-[1.9rem] bg-surface"
               />
             </div>
           </div>
