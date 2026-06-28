@@ -5,7 +5,11 @@ import { FiArrowDown } from "react-icons/fi";
 import Typewriter from "./Typewriter";
 import { CONTACT } from "../data/site";
 
-const cloudFrontURL = "https://dxvutl5ln4i40.cloudfront.net/raman.png";
+// Optimized local copies instead of the 1.8 MB CloudFront PNG:
+// WebP keeps the transparent cut-out, JPEG (flattened on the surface
+// colour) is the fallback for browsers without WebP.
+const portraitWebp = `${import.meta.env.BASE_URL}raman.webp`;
+const portraitJpg = `${import.meta.env.BASE_URL}raman.jpg`;
 
 const container = {
   hidden: {},
@@ -22,11 +26,11 @@ const Hero = () => {
       id="home"
       className="relative overflow-hidden min-h-screen flex items-center bg-bg pt-24 pb-20 md:py-0 px-[5%] md:px-[10%]"
     >
-      {/* Animated gradient mesh background */}
+      {/* Static gradient mesh background (no per-frame blur compositing) */}
       <div aria-hidden="true" className="absolute inset-0 -z-0">
-        <div className="absolute -top-32 -left-24 w-[28rem] h-[28rem] rounded-full bg-accent/20 blur-[120px] animate-float" />
-        <div className="absolute top-1/3 -right-24 w-[32rem] h-[32rem] rounded-full bg-cyan-500/10 blur-[130px] animate-glow-pulse" />
-        <div className="absolute bottom-0 left-1/4 w-[24rem] h-[24rem] rounded-full bg-teal-400/10 blur-[120px] animate-float" />
+        <div className="absolute -top-32 -left-24 w-[26rem] h-[26rem] rounded-full bg-accent/20 blur-[90px]" />
+        <div className="absolute top-1/3 -right-24 w-[28rem] h-[28rem] rounded-full bg-cyan-500/10 blur-[90px]" />
+        <div className="absolute bottom-0 left-1/4 w-[22rem] h-[22rem] rounded-full bg-teal-400/10 blur-[90px] hidden md:block" />
         {/* subtle dot grid */}
         <div
           className="absolute inset-0 opacity-[0.15]"
@@ -135,18 +139,23 @@ const Hero = () => {
           variants={item}
           className="flex justify-center md:justify-end"
         >
-          <div className="relative animate-float">
+          <div className="relative md:animate-float">
             {/* glow ring */}
             <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-accent/40 via-transparent to-accent/20 blur-2xl" />
             {/* gradient border frame */}
             <div className="relative p-[2px] rounded-[2rem] bg-gradient-to-tr from-accent via-accent/30 to-transparent shadow-glow">
-              <img
-                src={cloudFrontURL}
-                alt="Portrait of Raman Oraha"
-                width="320"
-                height="400"
-                className="w-72 h-[24rem] md:w-80 md:h-[26rem] object-cover object-[center_30%] rounded-[1.9rem] bg-surface"
-              />
+              <picture>
+                <source srcSet={portraitWebp} type="image/webp" />
+                <img
+                  src={portraitJpg}
+                  alt="Portrait of Raman Oraha"
+                  width="320"
+                  height="416"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-72 h-[24rem] md:w-80 md:h-[26rem] object-cover object-[center_30%] rounded-[1.9rem] bg-surface"
+                />
+              </picture>
             </div>
           </div>
         </motion.div>
