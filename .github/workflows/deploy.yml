@@ -52,3 +52,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Pages deployments can queue for a while when GitHub is degraded;
+          # wait up to 30 minutes instead of the default 10.
+          timeout: 1800000
