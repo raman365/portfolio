@@ -4,25 +4,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Evolved dark + cyan palette (named from the original hex values)
-        bg: "#181b22", // page base, a touch deeper than the old #20242d
-        surface: "#20242d", // primary section background
-        "surface-2": "#323846", // alternating / raised sections
-        ink: "#0B0D17", // near-black for text on the accent
-        accent: "#07eeff", // cyan
-        "accent-dim": "#05c5d9", // hover / muted cyan
+        // Warm editorial dark palette
+        bg: "#0b0b0d", // near-black page base
+        surface: "#121215", // raised section background
+        "surface-2": "#18181c", // cards / alternating sections
+        cream: "#f4f1ea", // warm off-white body text
+        muted: "#a3a099", // warm gray secondary text
+        ink: "#171004", // near-black text on the accent
+        accent: "#f5a524", // amber gold
+        "accent-dim": "#dd8f0e", // hover amber
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
         display: ["'Space Grotesk'", "Inter", "system-ui", "sans-serif"],
+        serif: ["'Instrument Serif'", "Georgia", "serif"],
       },
       boxShadow: {
-        glow: "0 0 40px -8px rgba(7, 238, 255, 0.45)",
-        "glow-sm": "0 0 20px -6px rgba(7, 238, 255, 0.5)",
-      },
-      backgroundImage: {
-        "grid-fade":
-          "radial-gradient(circle at 50% 0%, rgba(7,238,255,0.08), transparent 60%)",
+        glow: "0 0 50px -12px rgba(245, 165, 36, 0.45)",
+        "glow-sm": "0 0 24px -8px rgba(245, 165, 36, 0.5)",
       },
       keyframes: {
         "fade-up": {
@@ -35,13 +34,18 @@ module.exports = {
         },
         "glow-pulse": {
           "0%, 100%": { opacity: "0.5" },
-          "50%": { opacity: "0.85" },
+          "50%": { opacity: "0.9" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
       animation: {
         "fade-up": "fade-up 0.6s ease-out both",
         float: "float 6s ease-in-out infinite",
         "glow-pulse": "glow-pulse 4s ease-in-out infinite",
+        marquee: "marquee 45s linear infinite",
       },
     },
   },

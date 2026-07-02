@@ -48,7 +48,7 @@ const Header = () => {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm font-medium text-gray-300 hover:text-accent transition-colors duration-200 rounded"
+                  className="text-sm font-medium text-muted hover:text-accent transition-colors duration-200 rounded"
                 >
                   {link.label}
                 </a>
@@ -60,7 +60,7 @@ const Header = () => {
         {/* Mobile toggle */}
         <button
           type="button"
-          className="md:hidden p-2 text-white rounded"
+          className="md:hidden p-2 text-cream rounded"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -88,7 +88,7 @@ const Header = () => {
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block py-3 text-base font-medium text-gray-200 hover:text-accent transition-colors rounded"
+                    className="block py-3 text-base font-medium text-cream hover:text-accent transition-colors rounded"
                   >
                     {link.label}
                   </a>

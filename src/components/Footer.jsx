@@ -5,7 +5,7 @@ import { CONTACT } from "../data/site";
 
 const Footer = () => {
   return (
-    <footer className="bg-surface-2 text-gray-400 px-[5%] md:px-[10%] py-8 flex flex-col sm:flex-row gap-4 justify-between items-center border-t border-white/5">
+    <footer className="bg-surface text-muted px-[5%] md:px-[10%] py-8 flex flex-col sm:flex-row gap-4 justify-between items-center border-t border-white/5">
       <p className="text-sm text-center sm:text-left">
         © {new Date().getFullYear()} Raman Oraha. All rights reserved.
       </p>

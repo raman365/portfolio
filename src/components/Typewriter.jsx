@@ -1,45 +1,45 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const Typewriter = ({ text, delay, infinite, pauseAfterComplete }) => {
-  const [currentText, setCurrentText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
+/**
+ * Types out each phrase, pauses, deletes it, then moves to the next —
+ * looping forever. Pass a single-item array for the old behaviour.
+ */
+const Typewriter = ({
+  phrases,
+  typingDelay = 90,
+  deletingDelay = 45,
+  pause = 2200,
+}) => {
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [text, setText] = useState('');
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
+    const current = phrases[phraseIndex % phrases.length];
     let timeout;
 
-    if (currentIndex < text.length) {
-      // While typing
+    if (!deleting && text === current) {
+      // Finished typing — hold, then start deleting.
+      timeout = setTimeout(() => setDeleting(true), pause);
+    } else if (deleting && text === '') {
+      // Finished deleting — advance to the next phrase.
+      setDeleting(false);
+      setPhraseIndex((i) => (i + 1) % phrases.length);
+    } else {
       timeout = setTimeout(() => {
-        setCurrentText(prevText => prevText + text[currentIndex]);
-        setCurrentIndex(prevIndex => prevIndex + 1);
-      }, delay);
-    } else if (currentIndex === text.length && infinite) {
-      // Wait for pause after typing the entire text
-      timeout = setTimeout(() => {
-        setCurrentText(''); // Reset the text
-        setCurrentIndex(0); // Reset the index
-      }, pauseAfterComplete); // Pause after completing the typing
+        setText(current.slice(0, text.length + (deleting ? -1 : 1)));
+      }, deleting ? deletingDelay : typingDelay);
     }
 
     return () => clearTimeout(timeout);
-  }, [currentIndex, delay, infinite, text, pauseAfterComplete]);
-
-  useEffect(() => {
-    // Toggle cursor visibility after typing completes
-    if (currentIndex === text.length) {
-      const cursorTimeout = setInterval(() => {
-        setShowCursor(prev => !prev); // Toggle the cursor on and off
-      }, 500); // Cursor blinks every 500ms
-
-      return () => clearInterval(cursorTimeout);
-    }
-  }, [currentIndex, text]);
+  }, [text, deleting, phraseIndex, phrases, typingDelay, deletingDelay, pause]);
 
   return (
     <span>
-      {currentText}
-      {showCursor && '|'}
+      {text}
+      <span className="animate-pulse" aria-hidden="true">
+        |
+      </span>
     </span>
   );
 };

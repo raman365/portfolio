@@ -85,7 +85,7 @@ const CLOUDS = [
 
 function Badge({ icon, label }) {
   return (
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm bg-white/5 border border-white/10 text-gray-200 hover:border-accent/50 hover:text-accent transition-colors">
+    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm bg-white/5 border border-white/10 text-cream/90 hover:border-accent/50 hover:text-accent transition-colors">
       <span className="text-accent text-base">{icon}</span>
       {label}
     </span>
@@ -134,7 +134,7 @@ function CloudCard() {
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                 active === c.key
                   ? "bg-accent text-ink"
-                  : "text-gray-300 hover:text-accent"
+                  : "text-muted hover:text-accent"
               }`}
             >
               <span className="text-base">{c.icon}</span>
@@ -160,13 +160,17 @@ function CloudCard() {
 
 const Skills = () => {
   return (
-    <Section id="skills" className="bg-surface" labelledBy="skills-heading">
+    <Section id="skills" className="bg-bg" labelledBy="skills-heading">
       <motion.div className="text-center mb-10" variants={revealVariants}>
-        <SectionHeading id="skills-heading" accent="Skills">
-          My
+        <SectionHeading
+          id="skills-heading"
+          kicker="02 — Toolbox"
+          accent="work with"
+        >
+          What I
         </SectionHeading>
-        <p className="text-gray-400 mt-3">
-          Tools and platforms I work with day to day.
+        <p className="text-muted mt-4">
+          The tools and platforms behind my day-to-day work.
         </p>
       </motion.div>
 

@@ -96,13 +96,17 @@ const Project = () => {
       : PROJECTS.filter((p) => p.tags.includes(active));
 
   return (
-    <Section id="portfolio" className="bg-surface-2" labelledBy="projects-heading">
+    <Section id="portfolio" className="bg-surface" labelledBy="projects-heading">
       <motion.div className="text-center mb-8" variants={revealVariants}>
-        <SectionHeading id="projects-heading" accent="Projects">
-          My
+        <SectionHeading
+          id="projects-heading"
+          kicker="01 — Selected Work"
+          accent="built"
+        >
+          Things I&apos;ve
         </SectionHeading>
-        <p className="text-gray-400 mt-3">
-          A selection of things I&apos;ve designed and built.
+        <p className="text-muted mt-4">
+          Client work, products and experiments — pick a technology to filter.
         </p>
       </motion.div>
 
@@ -122,7 +126,7 @@ const Project = () => {
             className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
               active === tag
                 ? "bg-accent text-ink"
-                : "glass text-gray-300 hover:text-accent"
+                : "glass text-muted hover:text-accent"
             }`}
           >
             {tag}
@@ -148,7 +152,7 @@ const Project = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="group glass rounded-xl overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-glow transition-all duration-300"
+              className="group glass rounded-2xl overflow-hidden flex flex-col hover:-translate-y-1 hover:border-accent/40 hover:shadow-glow-sm transition-all duration-300"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -158,22 +162,22 @@ const Project = () => {
                   decoding="async"
                   className="w-full h-44 object-cover object-top brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500"
                 />
-                <span className="absolute top-3 right-3 w-8 h-8 rounded-full bg-ink/70 flex items-center justify-center text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="absolute top-3 right-3 w-8 h-8 rounded-full bg-bg/70 flex items-center justify-center text-accent opacity-0 group-hover:opacity-100 transition-opacity">
                   <FiArrowUpRight size={16} />
                 </span>
               </div>
               <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-display font-semibold text-lg group-hover:text-accent transition-colors">
+                <h3 className="font-display font-semibold text-lg text-cream group-hover:text-accent transition-colors">
                   {project.label}
                 </h3>
-                <p className="text-sm text-gray-400 mt-2 flex-1">
+                <p className="text-sm text-muted mt-2 flex-1">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mt-4">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-gray-300 border border-white/10"
+                      className="px-2.5 py-1 rounded-md text-xs font-medium bg-white/5 text-muted border border-white/10"
                     >
                       {tag}
                     </span>
