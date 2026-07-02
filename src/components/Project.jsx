@@ -100,13 +100,13 @@ const Project = () => {
       <motion.div className="text-center mb-8" variants={revealVariants}>
         <SectionHeading
           id="projects-heading"
-          kicker="01 — Selected Work"
+          kicker="01 / Selected Work"
           accent="built"
         >
           Things I&apos;ve
         </SectionHeading>
         <p className="text-muted mt-4">
-          Client work, products and experiments — pick a technology to filter.
+          Client work, products and experiments. Pick a technology to filter.
         </p>
       </motion.div>
 
@@ -147,7 +147,7 @@ const Project = () => {
               href={project.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${project.label} — opens in a new tab`}
+              aria-label={`${project.label} (opens in a new tab)`}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}

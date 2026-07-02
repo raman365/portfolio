@@ -13,7 +13,7 @@ const About = () => {
     <Section id="about" className="bg-surface" labelledBy="about-heading">
       <div className="max-w-3xl mx-auto text-center">
         <motion.div variants={revealVariants}>
-          <SectionHeading id="about-heading" kicker="03 — About" accent="code">
+          <SectionHeading id="about-heading" kicker="03 / About" accent="code">
             Behind the
           </SectionHeading>
         </motion.div>
@@ -21,12 +21,11 @@ const About = () => {
           className="text-muted text-lg leading-relaxed mt-6"
           variants={revealVariants}
         >
-          For the past seven years I&apos;ve been crafting seamless, responsive
-          and visually engaging experiences for the web — embedded in company
-          teams and independently as a freelancer. From e-commerce stores and
-          corporate sites to cross-platform mobile apps, I care about the
-          details: how fast it loads, how it feels to use, and whether it
-          actually moves the needle for the people who commissioned it.
+          I&apos;m a web developer with seven years of experience, working both
+          inside company teams and independently as a freelancer. I&apos;ve
+          built e-commerce stores, corporate sites and cross-platform mobile
+          apps, and I care about the details: how fast it loads, how it feels
+          to use, and whether it actually does the job it was built for.
         </motion.p>
         <motion.p
           className="font-serif italic text-accent text-xl mt-6"

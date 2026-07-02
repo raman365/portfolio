@@ -164,7 +164,7 @@ const Skills = () => {
       <motion.div className="text-center mb-10" variants={revealVariants}>
         <SectionHeading
           id="skills-heading"
-          kicker="02 — Toolbox"
+          kicker="02 / Toolbox"
           accent="work with"
         >
           What I

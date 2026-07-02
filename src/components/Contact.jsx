@@ -42,7 +42,7 @@ const Contact = () => {
         <motion.div variants={revealVariants}>
           <SectionHeading
             id="contact-heading"
-            kicker="04 — Contact"
+            kicker="04 / Contact"
             accent="together"
           >
             Let&apos;s build

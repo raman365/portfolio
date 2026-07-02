@@ -85,7 +85,7 @@ const Hero = () => {
                   phrases={[
                     "Web Developer",
                     "React & React Native Developer",
-                    "WordPress & Shopify Specialist",
+                    "Websites, Web Apps & Mobile Apps",
                   ]}
                 />
               </span>
@@ -95,10 +95,9 @@ const Hero = () => {
               variants={item}
               className="text-base text-muted mt-6 max-w-xl mx-auto md:mx-0 leading-relaxed"
             >
-              Seven years of turning ideas into websites and apps people enjoy
-              using — from e-commerce stores that convert to cross-platform
-              mobile apps. Based in the UK, working with teams and clients
-              worldwide.
+              I&apos;ve spent the last seven years building websites and apps
+              people enjoy using, from e-commerce stores to cross-platform
+              mobile apps. Based in the UK, working with clients worldwide.
             </motion.p>
 
             <motion.div
